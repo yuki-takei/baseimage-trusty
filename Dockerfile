@@ -53,7 +53,8 @@ RUN useradd -d /home/yuki -m -s /bin/bash yuki && \
     mkdir /home/yuki/.ssh && \
     chmod 700 /home/yuki/.ssh
 ADD src/authorized_keys /home/yuki/.ssh/
-RUN chown -R yuki: /home/yuki
+RUN chown -R yuki: /home/yuki/.ssh \
+    chmod 400 /home/yuki/.ssh/authorized_keys
 
 
 ## supervisor settings
